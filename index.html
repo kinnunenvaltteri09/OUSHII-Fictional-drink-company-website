@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUSHII – Isotonic Long Drinks</title>
+  <meta name="description" content="OUSHII on suomalainen isotoninen long drink -sarja. Raikasta, kevyttä ja virkistävää makua aktiiviseen elämään.">
+  <meta name="theme-color" content="#0A6E99">
+
+  <!-- ============================================
+       FONTS
+       Poppins = bold display font (headlines, brand name)
+       Manrope = body font (paragraphs, nav, buttons)
+       Both support Finnish characters (ä, ö, å).
+       ============================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link: lets keyboard/screen-reader users jump straight to the content -->
+  <a href="#main-content" class="skip-link">Siirry pääsisältöön</a>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+       Sticky bar with logo text + 4 links.
+       On mobile (below 720px) this collapses into
+       a hamburger menu, controlled by script.js.
+       ============================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+
+      <a href="#etusivu" class="site-header__brand">OUSHII</a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Päävalikko">
+        <ul class="site-nav__list">
+          <li><a href="#etusivu" class="site-nav__link">Etusivu</a></li>
+          <li><a href="#meista" class="site-nav__link">Meistä</a></li>
+          <li><a href="#tuotteet" class="site-nav__link">Tuotteet</a></li>
+          <li><a href="#yhteystiedot" class="site-nav__link">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger button, only visible on mobile via CSS -->
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Avaa valikko">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================
+         HERO SECTION
+         First thing visitors see. Large logo, headline,
+         short intro text and one clear call-to-action.
+         ============================================ -->
+    <section class="hero" id="etusivu" aria-label="Etusivu">
+
+      <!-- Decorative background bubbles - purely visual, hidden from screen readers -->
+      <div class="hero__decor" aria-hidden="true">
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+        <span class="bubble bubble--4"></span>
+      </div>
+
+      <div class="container hero__inner">
+
+        <!-- ============================================
+             LOGO
+             To replace the logo, swap the file at
+             images/oushii-logo.png for your own (keep
+             the same filename, or update the src below).
+             ============================================ -->
+        <div class="hero__logo-plate">
+          <img
+            src="images/oushii-logo.png"
+            alt="OUSHII – Isotonic Long Drinks"
+            class="hero__logo"
+            width="1004"
+            height="644"
+          >
+        </div>
+
+        <h1 class="hero__headline">Raikasta. Suomalaista. Isotonista.</h1>
+
+        <p class="hero__subtext">
+          OUSHII yhdistää long drinkin raikkauden ja isotonisen juoman keveyden.
+          Avaa tölkki ja olet valmis mihin tahansa – rannalta treeniin, terassilta metsäpolulle.
+        </p>
+
+        <a href="#tuotteet" class="btn btn--primary hero__cta">
+          Tutustu tuotteisiin
+          <svg class="btn__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Wave divider into the "Meistä" section below -->
+      <svg class="wave-divider" style="--wave-fill: var(--color-white);" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0,40 C160,90 320,0 480,30 C640,60 800,100 960,70 C1120,40 1280,10 1440,45 L1440,100 L0,100 Z"></path>
+      </svg>
+    </section>
+
+
+    <!-- ============================================
+         MEISTÄ (ABOUT) SECTION
+         Brand description + 4 short value cards.
+         ============================================ -->
+    <section class="about" id="meista" aria-labelledby="about-heading">
+      <div class="container about__grid">
+
+        <div class="about__content">
+          <p class="eyebrow">Meistä</p>
+          <h2 id="about-heading" class="section-heading">Raikkautta ilman kompromisseja...tai krapulaa</h2>
+          <p class="about__lead">
+            OUSHII yhdistää long drinkin raikkauden ja isotonisen juoman keveyden. Suomessa
+            suunniteltu juoma sopii aktiiviseen ja rentoon elämäntyyliin – saat alkoholin hyödyt ja minimoit sen haitat.
+          </p>
+        </div>
+
+        <!-- Decorative glass illustration - purely visual -->
+        <div class="about__visual" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="96" fill="var(--color-sky)" opacity="0.4"/>
+            <path d="M72 58h56l-7 88a9 9 0 0 1-9 8H88a9 9 0 0 1-9-8L72 58Z" stroke="var(--color-blue-dark)" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M76 94c9 7 39 7 48 0" stroke="var(--color-blue-dark)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="93" cy="78" r="3" fill="var(--color-blue)"/>
+            <circle cx="108" cy="70" r="2.5" fill="var(--color-blue)"/>
+            <circle cx="100" cy="86" r="2" fill="var(--color-blue)"/>
+            <circle cx="104" cy="110" r="2.5" fill="var(--color-blue)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="values-grid">
+
+          <li class="value-card">
+            <span class="value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 44s14-12.5 14-24A14 14 0 0 0 10 20c0 11.5 14 24 14 24Z"/>
+                <circle cx="24" cy="20" r="5"/>
+              </svg>
+            </span>
+            <h3 class="value-card__title">Suomalainen</h3>
+            <p class="value-card__text">Suunniteltu ja ideoitu Suomessa, pohjoisen raikkauden innoittamana.</p>
+          </li>
+
+          <li class="value-card">
+            <span class="value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 6c8 10 13 17.5 13 24a13 13 0 1 1-26 0c0-6.5 5-14 13-24Z"/>
+              </svg>
+            </span>
+            <h3 class="value-card__title">Raikas</h3>
+            <p class="value-card__text">Kevyt ja virkistävä makumaailma, ei liian makea.</p>
+          </li>
+
+          <li class="value-card">
+            <span class="value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="14" r="4"/>
+                <circle cx="34" cy="14" r="4"/>
+                <circle cx="24" cy="34" r="4"/>
+                <path d="M17 16.5 21 30M31 16.5 27 30M18 14h12"/>
+              </svg>
+            </span>
+            <h3 class="value-card__title">Isotoninen</h3>
+            <p class="value-card__text">Isotoniseen juomakonseptiin perustuva resepti.</p>
+          </li>
+
+          <li class="value-card">
+            <span class="value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 18h24l-2 22H14L12 18Z"/>
+                <path d="M17 18v-4a7 7 0 0 1 14 0v4"/>
+              </svg>
+            </span>
+            <h3 class="value-card__title">Kätevä</h3>
+            <p class="value-card__text">Mukana minne tahansa – rannalle, klubille tai terassille.</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+         BRAND STORY SECTION
+         Full-width dark navy section between "Meistä"
+         and "Tuotteet" for visual rhythm/contrast.
+         ============================================ -->
+    <section class="story" aria-labelledby="story-heading">
+      <div class="story__decor" aria-hidden="true">
+        <span class="bubble bubble--5"></span>
+        <span class="bubble bubble--6"></span>
+      </div>
+
+      <div class="container story__inner">
+        <p class="eyebrow eyebrow--on-dark">Tarinamme</p>
+        <h2 id="story-heading" class="section-heading section-heading--on-dark">Suunniteltu ylpeästi Suomessa. Tehty raikkaaksi.</h2>
+        <p class="story__text">
+          Puhtaista lähtökohdista syntynyt resepti, kirkkaan pohjoisen veden ja rohkean
+          raikkauden hengessä. OUSHII tehdään huolella – kesäisiin hetkiin, aktiivisiin
+          päiviin ja aivan kaikkeen siltä väliltä.
+        </p>
+      </div>
+
+      <!-- Wave divider into the "Tuotteet" section below -->
+      <svg class="wave-divider" style="--wave-fill: var(--color-white);" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path d="M0,40 C160,90 320,0 480,30 C640,60 800,100 960,70 C1120,40 1280,10 1440,45 L1440,100 L0,100 Z"></path>
+      </svg>
+    </section>
+
+
+    <!-- ============================================
+         PRODUCT SECTION
+         This section is built to grow. Each product is one
+         list item with the class "product-card" - copy, paste
+         and edit to add more. The grid reflows itself, so it
+         looks good with 2 products or with 12.
+         ============================================ -->
+    <section class="products" id="tuotteet" aria-labelledby="products-heading">
+      <div class="container">
+
+        <div class="products__intro">
+          <p class="eyebrow">Tuotteet</p>
+          <h2 id="products-heading" class="section-heading">Löydä oma makusi</h2>
+          <p class="products__lead">Kaikkia tuotteitamme yhdistää sokerittomuuden lisäksi sama ainutlaatuinen isotoninen elektrolyyttikompleksi, joka on suunniteltu ylläpitämään nestetasapainoa alkoholin sivuvaikutusten minimoimiseksi. Meidän juomilla voit juhlia kunnolla, ilman seuraavan aamun kärsimystä. 
+Julkaisemme aluksi kolme makua, mutta lisää on tulossa. </p>
+        </div>
+
+        <!-- ADD NEW PRODUCTS HERE -->
+        <ul class="product-grid">
+
+          <!-- COPY THIS PRODUCT CARD TO ADD A NEW PRODUCT -->
+          <li class="product-card">
+            <div class="product-media product-media--citrus">
+              <div class="product-media__placeholder" aria-hidden="true">
+                <svg viewBox="0 0 100 140" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="20" y="22" width="60" height="100" rx="14"/>
+                  <ellipse cx="50" cy="22" rx="30" ry="8"/>
+                  <path d="M44 14c0-3 2-5 5-5h2c3 0 5 2 5 5"/>
+                  <path d="M30 60h40M30 80h40" opacity="0.5"/>
+                </svg>
+              </div>
+              <!-- REPLACE THIS IMAGE WITH THE ACTUAL PRODUCT IMAGE -->
+              <img
+                class="product-media__photo"
+                src="images/products/product-01.png"
+                alt="OUSHII Citrus -tölkki"
+                width="600" height="600"
+                loading="lazy"
+                onerror="this.style.display='none';"
+              >
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">OUSHII Gin and Tonic</h3>
+              <p class="product-card__flavor">Gin and Tonic</p>
+              <p class="product-card__desc">Raikas ja yrttinen, klassikkodrinkin rakastajille.</p>
+              <ul class="product-card__tags">
+                <li>330 ml</li>
+                <li>Gin and Tonic</li>
+                <li>Isotoninen</li>
+<li>180 mg kofeiinia</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media product-media--mint">
+              <div class="product-media__placeholder" aria-hidden="true">
+                <svg viewBox="0 0 100 140" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="20" y="22" width="60" height="100" rx="14"/>
+                  <ellipse cx="50" cy="22" rx="30" ry="8"/>
+                  <path d="M44 14c0-3 2-5 5-5h2c3 0 5 2 5 5"/>
+                  <path d="M30 60h40M30 80h40" opacity="0.5"/>
+                </svg>
+              </div>
+              <!-- REPLACE THIS IMAGE WITH THE ACTUAL PRODUCT IMAGE -->
+              <img
+                class="product-media__photo"
+                src="images/products/product-02.png"
+                alt="OUSHII Mohito"
+                width="600" height="600"
+                loading="lazy"
+                onerror="this.style.display='none';"
+              >
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">OUSHII Mohito</h3>
+              <p class="product-card__flavor">Minttu-Lime</p>
+              <p class="product-card__desc">Vilpoisa mintun ja sitrushedelmien yhdistelmä pienellä potkulla.</p>
+              <ul class="product-card__tags">
+                <li>330 ml</li>
+                <li>Mohito</li>
+                <li>Isotoninen</li>
+<li>180 mg kofeiinia</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-media product-media--berry">
+              <div class="product-media__placeholder" aria-hidden="true">
+                <svg viewBox="0 0 100 140" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="20" y="22" width="60" height="100" rx="14"/>
+                  <ellipse cx="50" cy="22" rx="30" ry="8"/>
+                  <path d="M44 14c0-3 2-5 5-5h2c3 0 5 2 5 5"/>
+                  <path d="M30 60h40M30 80h40" opacity="0.5"/>
+                </svg>
+              </div>
+              <!-- REPLACE THIS IMAGE WITH THE ACTUAL PRODUCT IMAGE -->
+              <img
+                class="product-media__photo"
+                src="images/products/product-03.png"
+                alt="OUSHII Blue Razz"
+                width="600" height="600"
+                loading="lazy"
+                onerror="this.style.display='none';"
+              >
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">OUSHII Blue Razz</h3>
+              <p class="product-card__flavor"> Sininen vadelma</p>
+              <p class="product-card__desc">Mehevä ja pehmeä sinisen vadelman maku sekoitettuna rakastettuun Finlandia-vodkaan.</p>
+              <ul class="product-card__tags">
+                <li>330 ml</li>
+                <li>Sininen vadelma</li>
+                <li>Isotoninen</li>
+<li>180 mg kofeiinia</li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================
+         YHTEYSTIEDOT (CONTACT) SECTION
+         ============================================ -->
+    <section class="contact" id="yhteystiedot" aria-labelledby="contact-heading">
+      <div class="container contact__grid">
+
+        <div class="contact__intro">
+          <p class="eyebrow">Yhteystiedot</p>
+          <h2 id="contact-heading" class="section-heading">Ollaan yhteydessä</h2>
+          <p class="contact__text">
+            Kysyttävää tuotteista, yhteistyöstä tai jälleenmyynnistä? Jätä viestiä,
+            niin palataan asiaan pian. Uudet makuehdotukset ovat myös tervetulleita;)
+          </p>
+          <a href="mailto:hello@oushii.fi" class="btn btn--secondary">Lähetä sähköpostia</a>
+        </div>
+
+        <div class="contact__card">
+          <dl class="contact__details">
+            <div class="contact__detail">
+              <dt>Sähköposti</dt>
+              <dd><a href="mailto:hello@oushii.fi">hello@oushii.fi</a></dd>
+            </div>
+            <div class="contact__detail">
+              <dt>Puhelin</dt>
+              <dd><a href="tel:+358401234567">+358 40 123 4567</a></dd>
+            </div>
+            <div class="contact__detail">
+              <dt>Sijainti</dt>
+              <dd>Tampere, Suomi</dd>
+            </div>
+          </dl>
+
+          <div class="contact__social">
+            <p class="contact__social-label">Seuraa meitä</p>
+            <!-- Replace the "#" links below with your real social media profiles -->
+            <ul class="social-list">
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+
+    <!-- Wave divider at the very top of the footer -->
+    <svg class="wave-divider" style="--wave-fill: var(--color-navy);" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0,40 C160,90 320,0 480,30 C640,60 800,100 960,70 C1120,40 1280,10 1440,45 L1440,100 L0,100 Z"></path>
+    </svg>
+
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__logo">OUSHII</p>
+        <p class="site-footer__tagline">Isotonic Long Drinks</p>
+        <p class="site-footer__desc">
+          Suomalainen isotoninen long drink -sarja aktiiviseen ja raikkaaseen elämäntyyliin.
+        </p>
+      </div>
+
+      <nav class="site-footer__col" aria-label="Alatunnisteen valikko">
+        <p class="site-footer__col-title">Valikko</p>
+        <ul>
+          <li><a href="#etusivu">Etusivu</a></li>
+          <li><a href="#meista">Meistä</a></li>
+          <li><a href="#tuotteet">Tuotteet</a></li>
+          <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col">
+        <p class="site-footer__col-title">Yhteystiedot</p>
+        <ul>
+          <li><a href="mailto:hello@oushii.fi">hello@oushii.fi</a></li>
+          <li><a href="tel:+358401234567">+358 40 123 4567</a></li>
+        </ul>
+
+        <p class="site-footer__col-title site-footer__col-title--spaced">Seuraa meitä</p>
+        <!-- Replace the "#" links below with your real social media profiles -->
+        <ul class="social-list social-list--footer">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="container">
+        <p>© 2026 OUSHII – Isotonic Long Drinks. Kaikki oikeudet pidätetään.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
